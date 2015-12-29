@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "BlogPost.h"
 
 @interface MasterViewController ()
 
@@ -18,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    BlogPost *blogPost = [[BlogPost alloc] initWithTitle:@"some tile"];
+//   blogPost.author = @"someone";
+//    BlogPost *blogPost2 = [BlogPost blogPostWithTitle:@ "some title"];
     NSURL *blogURL = [NSURL URLWithString:@"http://blog.teamtreehouse.com/api/get_recent_summary/"];
     
     NSData *jsonData = [NSData dataWithContentsOfURL: blogURL];
@@ -25,13 +29,20 @@
     NSError *error = nil;
     
     NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error: &error];
+    self.blogPostArray =[NSMutableArray array];
     
-   NSLog(@"%@", dataDictionary);
+    NSArray *blogArray = [dataDictionary objectForKey:@"posts"];
+    for (NSDictionary *dpDictionary in blogArray) {
+        BlogPost *blog = [BlogPost blogPostWithTitle:[dpDictionary objectForKey:@"title"]];
+        blog.author = [dpDictionary objectForKey:@"author"];
+        [self.blogPostArray addObject: blog];
+    }
+//   NSLog(@"%@", dataDictionary);
 //    NSDictionary *blogPost1 = [[NSDictionary alloc] initWithObjectsAndKeys: @"The Missing widget in Android", @"title", @"Ben", @"author", nil];
 //    
 //    NSDictionary *blogPost2 = [[NSDictionary alloc] initWithObjectsAndKeys: @"The IOS development", @"title", @"Amit", @"author", nil];
     
-    self.blogPostArray = [dataDictionary objectForKey:@"posts"];
+//    self.blogPostArray = [dataDictionary objectForKey:@"posts"];
 
 }
 
@@ -72,9 +83,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDictionary *blogPost = [self.blogPostArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [blogPost valueForKey:@"title"];
-    cell.detailTextLabel.text = [blogPost valueForKey:@"author"];
+//    NSDictionary *blogPost = [self.blogPostArray objectAtIndex:indexPath.row];
+    BlogPost *blogPost = [self.blogPostArray objectAtIndex:indexPath.row];
+//    cell.textLabel.text = [blogPost valueForKey:@"title"];
+    cell.textLabel.text = blogPost.title;
+//    cell.detailTextLabel.text = [blogPost valueForKey:@"author"];
+    cell.detailTextLabel.text = blogPost.author;
     return cell;
 }
 

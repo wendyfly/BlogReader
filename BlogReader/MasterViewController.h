@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
-@property(strong, nonatomic) NSArray *blogPostArray;
+@property(strong, nonatomic) NSMutableArray *blogPostArray;
 
 
 

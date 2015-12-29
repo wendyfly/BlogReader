@@ -14,6 +14,7 @@
 		A21AAA751C2F477100848F3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21AAA731C2F477100848F3E /* Main.storyboard */; };
 		A21AAA771C2F477100848F3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21AAA761C2F477100848F3E /* Assets.xcassets */; };
 		A21AAA7A1C2F477100848F3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21AAA781C2F477100848F3E /* LaunchScreen.storyboard */; };
+		A21AAAA91C31011100848F3E /* BlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AAAA81C31011100848F3E /* BlogPost.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		A21AAA761C2F477100848F3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A21AAA791C2F477100848F3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A21AAA7B1C2F477100848F3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A21AAAA71C31011100848F3E /* BlogPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPost.h; sourceTree = "<group>"; };
+		A21AAAA81C31011100848F3E /* BlogPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPost.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				A21AAA6E1C2F477100848F3E /* MasterViewController.m */,
 				A21AAA701C2F477100848F3E /* DetailViewController.h */,
 				A21AAA711C2F477100848F3E /* DetailViewController.m */,
+				A21AAAA71C31011100848F3E /* BlogPost.h */,
+				A21AAAA81C31011100848F3E /* BlogPost.m */,
 				A21AAA731C2F477100848F3E /* Main.storyboard */,
 				A21AAA761C2F477100848F3E /* Assets.xcassets */,
 				A21AAA781C2F477100848F3E /* LaunchScreen.storyboard */,
@@ -157,6 +162,7 @@
 			files = (
 				A21AAA6C1C2F477100848F3E /* AppDelegate.m in Sources */,
 				A21AAA6F1C2F477100848F3E /* MasterViewController.m in Sources */,
+				A21AAAA91C31011100848F3E /* BlogPost.m in Sources */,
 				A21AAA691C2F477100848F3E /* main.m in Sources */,
 				A21AAA721C2F477100848F3E /* DetailViewController.m in Sources */,
 			);
