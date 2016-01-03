@@ -37,6 +37,7 @@
         blog.author = [dpDictionary objectForKey:@"author"];
         blog.thumbNailImage = [dpDictionary objectForKey:@"thumbnail"];
         blog.date = [dpDictionary objectForKey:@"date"];
+        blog.url = [NSURL URLWithString: [dpDictionary objectForKey: @"url"]];
         [self.blogPostArray addObject: blog];
     }
     
@@ -110,6 +111,12 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+     BlogPost *blogPost = [self.blogPostArray objectAtIndex:indexPath.row];
+    UIApplication *application = [UIApplication sharedApplication];
+    [application openURL: blogPost.url];
 }
 
 

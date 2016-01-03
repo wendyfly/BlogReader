@@ -13,6 +13,7 @@
 @property(nonatomic, strong) NSString *author;
 @property(nonatomic, strong) NSString *thumbNailImage;
 @property(nonatomic, strong) NSString *date;
+@property(nonatomic, strong) NSURL *url;
 
 - (id) initWithTitle:(NSString *) title;
 
