@@ -35,8 +35,12 @@
     for (NSDictionary *dpDictionary in blogArray) {
         BlogPost *blog = [BlogPost blogPostWithTitle:[dpDictionary objectForKey:@"title"]];
         blog.author = [dpDictionary objectForKey:@"author"];
+        blog.thumbNailImage = [dpDictionary objectForKey:@"thumbnail"];
+        blog.date = [dpDictionary objectForKey:@"date"];
         [self.blogPostArray addObject: blog];
     }
+    
+    
 //   NSLog(@"%@", dataDictionary);
 //    NSDictionary *blogPost1 = [[NSDictionary alloc] initWithObjectsAndKeys: @"The Missing widget in Android", @"title", @"Ben", @"author", nil];
 //    
@@ -85,10 +89,21 @@
 
 //    NSDictionary *blogPost = [self.blogPostArray objectAtIndex:indexPath.row];
     BlogPost *blogPost = [self.blogPostArray objectAtIndex:indexPath.row];
+    if([blogPost.thumbNailImage isKindOfClass: [NSString class]]) {
+    
+    NSData *imageData = [NSData dataWithContentsOfURL: blogPost.thumbnailURL];
+    
+    UIImage *image = [UIImage imageWithData:imageData];
+        
+    cell.imageView.image = image;
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"cat.png"];
+    }
 //    cell.textLabel.text = [blogPost valueForKey:@"title"];
     cell.textLabel.text = blogPost.title;
 //    cell.detailTextLabel.text = [blogPost valueForKey:@"author"];
-    cell.detailTextLabel.text = blogPost.author;
+    cell.detailTextLabel.text = [NSString stringWithFormat: @"%@ - %@",blogPost.author, [blogPost formattedDate]];
+
     return cell;
 }
 

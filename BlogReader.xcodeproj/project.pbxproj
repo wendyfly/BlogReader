@@ -15,6 +15,7 @@
 		A21AAA771C2F477100848F3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21AAA761C2F477100848F3E /* Assets.xcassets */; };
 		A21AAA7A1C2F477100848F3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21AAA781C2F477100848F3E /* LaunchScreen.storyboard */; };
 		A21AAAA91C31011100848F3E /* BlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = A21AAAA81C31011100848F3E /* BlogPost.m */; };
+		A21AAAAD1C33C02E00848F3E /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = A21AAAAC1C33C02E00848F3E /* cat.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A21AAA7B1C2F477100848F3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A21AAAA71C31011100848F3E /* BlogPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPost.h; sourceTree = "<group>"; };
 		A21AAAA81C31011100848F3E /* BlogPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPost.m; sourceTree = "<group>"; };
+		A21AAAAC1C33C02E00848F3E /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				A21AAA711C2F477100848F3E /* DetailViewController.m */,
 				A21AAAA71C31011100848F3E /* BlogPost.h */,
 				A21AAAA81C31011100848F3E /* BlogPost.m */,
+				A21AAAAC1C33C02E00848F3E /* cat.png */,
 				A21AAA731C2F477100848F3E /* Main.storyboard */,
 				A21AAA761C2F477100848F3E /* Assets.xcassets */,
 				A21AAA781C2F477100848F3E /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			files = (
 				A21AAA7A1C2F477100848F3E /* LaunchScreen.storyboard in Resources */,
 				A21AAA771C2F477100848F3E /* Assets.xcassets in Resources */,
+				A21AAAAD1C33C02E00848F3E /* cat.png in Resources */,
 				A21AAA751C2F477100848F3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
