@@ -67,11 +67,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        NSDictionary *blogPost = [self.blogPostArray objectAtIndex:indexPath.row];
-        [controller setDetailItem:[blogPost valueForKey:@"title"]];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
+        BlogPost *blogPost = [self.blogPostArray objectAtIndex:indexPath.row];
+        UINavigationController *dest = segue.destinationViewController;
+        
+         DetailViewController *viewController = dest.topViewController;
+    
+        viewController.postUrl = blogPost.url;
     }
 }
 
@@ -113,11 +114,11 @@
     return YES;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-     BlogPost *blogPost = [self.blogPostArray objectAtIndex:indexPath.row];
-    UIApplication *application = [UIApplication sharedApplication];
-    [application openURL: blogPost.url];
-}
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+////     BlogPost *blogPost = [self.blogPostArray objectAtIndex:indexPath.row];
+////    UIApplication *application = [UIApplication sharedApplication];
+////    [application openURL: blogPost.url];
+//}
 
 
 @end
